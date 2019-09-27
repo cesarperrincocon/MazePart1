@@ -5,6 +5,14 @@
  */
 package mazepart1;
 
+import com.sun.corba.se.impl.encoding.BufferManagerRead;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+
 /**
  *
  * @author cesar
@@ -16,6 +24,35 @@ public class MazePart1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ArrayList<String> bricks=MazePart1.read("data/MazeMap.txt");
+        
+        Form window = new Form(bricks);
+        window.setTitle("Maze");
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    }
+    
+    private static ArrayList<String> read(String filename) {
+        ArrayList<String> lines = new ArrayList<>();
+        try{
+            FileInputStream fstream = new FileInputStream(filename);
+            DataInputStream in = new DataInputStream(fstream);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            String line;
+            
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
+            }
+            
+            in.close();        
+        }catch (Exception e){
+            System.err.println("Error :" + e.getMessage());
+        }
+        
+        return lines;
+                
     }
     
 }
