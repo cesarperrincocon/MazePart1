@@ -57,7 +57,7 @@ public class MazePart1 {
             System.err.println("Error :" + e.getMessage());
         }
         
-        if (lines.size()>10){
+        if (lines.size()!=10){
             System.err.println("Error reading the .txt file");
             System.exit(0);
         }
