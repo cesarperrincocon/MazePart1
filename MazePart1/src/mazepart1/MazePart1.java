@@ -43,7 +43,13 @@ public class MazePart1 {
             String line;
             
             while ((line = br.readLine()) != null) {
-                lines.add(line);
+                if (line.length()==10){
+                    lines.add(line);
+                }else{
+                    System.err.println("Error reading the .txt file");
+                    System.exit(0);
+                }
+                
             }
             
             in.close();        
@@ -51,6 +57,10 @@ public class MazePart1 {
             System.err.println("Error :" + e.getMessage());
         }
         
+        if (lines.size()>10){
+            System.err.println("Error reading the .txt file");
+            System.exit(0);
+        }
         return lines;
                 
     }

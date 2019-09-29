@@ -23,7 +23,7 @@ public class Form extends JFrame{
     
     
     public Form(ArrayList<String> bricks){
-        if(bricks.size()!=0){
+        if(!bricks.isEmpty()){
             int width=bricks.get(0).toCharArray().length*BRICK_SIZE;
             int height=bricks.size()*BRICK_SIZE;
             this.setSize(width+(3*BRICK_SIZE),height+(3*BRICK_SIZE));
@@ -32,6 +32,7 @@ public class Form extends JFrame{
         this.bricks=bricks;
     }
     
+    @Override
     public void paint(Graphics g) {
         super.paintComponents(g);
         
@@ -53,6 +54,8 @@ public class Form extends JFrame{
                 if (c == '#'){
                     painter.setColor(fill);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    painter.setColor(line);
+                    painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
                 }else{
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
