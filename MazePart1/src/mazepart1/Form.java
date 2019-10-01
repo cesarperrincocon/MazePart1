@@ -10,6 +10,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 import javax.swing.JFrame;
 
 /**
@@ -48,17 +49,21 @@ public class Form extends JFrame{
         int x = 0;
         int y = BRICK_SIZE+20;
         
-        for (String wall : this.bricks){
+        for (String wall : this.bricks){  
             x = BRICK_SIZE+10;
-            for(char c : wall.toCharArray()){
-                if (c == '#'){
+            StringTokenizer st = new StringTokenizer(wall, ",");
+            while (st.hasMoreTokens()){
+                String nombre = st.nextToken();
+                if (nombre.equals("#")){
                     painter.setColor(fill);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
-                }else{
+                }else if(nombre.equals(".")){
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                }else{
+                    
                 }
                 x += BRICK_SIZE;
             }
