@@ -70,7 +70,7 @@ public class Form extends JFrame {
             StringTokenizer st = new StringTokenizer(wall, ",");
             painter.setColor(perso);
             painter.fillOval(posXPerso, posYPerso, 14, 14);
-            char [] carray = { 'F'};
+            char[] carray = {'F'};
             painter.drawChars(carray, 0, 1, posXFinal, posYFinal);
             x = BRICK_SIZE + 10;
 
@@ -118,8 +118,82 @@ public class Form extends JFrame {
             y += BRICK_SIZE;
         }
         
+        String posXactuelle = null;
+        switch (posXPerso) {
+            case 73:
+                posXactuelle = "A";
+                break;
+            case 93:
+                posXactuelle = "B";
+                break;
+            case 113:
+                posXactuelle = "C";
+                break;
+            case 133:
+                posXactuelle = "D";
+                break;
+            case 153:
+                posXactuelle = "E";
+                break;
+            case 173:
+                posXactuelle = "F";
+                break;
+            case 193:
+                posXactuelle = "G";
+                break;
+            case 213:
+                posXactuelle = "H";
+                break;
+            case 233:
+                posXactuelle = "I";
+                break;
+            case 253:
+                posXactuelle = "J";
+                break;
+
+            default:
+            // code block
+        } 
+        
+        
+        String posYactuelle = null;
+        switch (posYPerso) {
+            case 83:
+                posYactuelle = "1";
+                break;
+            case 103:
+                posYactuelle = "2";
+                break;
+            case 123:
+                posYactuelle = "3";
+                break;
+            case 143:
+                posYactuelle = "4";
+                break;
+            case 163:
+                posYactuelle = "5";
+                break;
+            case 183:
+                posYactuelle = "6";
+                break;
+            case 203:
+                posYactuelle = "7";
+                break;
+            case 223:
+                posYactuelle = "8";
+                break;
+            case 243:
+                posYactuelle = "9";
+                break;
+            case 263:
+                posYactuelle = "10";
+                break;
+
+            default:
+            // code block
+        }    
+        painter.drawString("Position du perso : [ "+posXactuelle+" ,"+posYactuelle+" ]", 350, 60);
     }
- 
 
     @Override
     protected void processKeyEvent(KeyEvent ke) {
