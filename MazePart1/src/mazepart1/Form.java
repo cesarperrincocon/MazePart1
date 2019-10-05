@@ -21,13 +21,13 @@ import javax.swing.JFrame;
 public class Form extends JFrame{
     private static final long seialVersionUID = 1L;
     private static final int BRICK_SIZE=20;
-    public int posXPerso = 73;
-    public int posYPerso = 83;
+    public int posXPerso;
+    public int posYPerso;
     ArrayList<String> bricks;
     
     
     
-    public Form(ArrayList<String> bricks){
+    public Form(ArrayList<String> bricks,int posXPerso, int posYPerso){
         if(!bricks.isEmpty()){
             int width=bricks.get(0).toCharArray().length*BRICK_SIZE;
             int height=bricks.size()*BRICK_SIZE;
@@ -35,6 +35,8 @@ public class Form extends JFrame{
         }
         
         this.bricks=bricks;
+        this.posXPerso=posXPerso;
+        this.posYPerso=posYPerso;
     }
     
     @Override
