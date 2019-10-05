@@ -45,13 +45,17 @@ public class Form extends JFrame{
         
         Color line = Color.GRAY.brighter();
         Color fill = Color.BLUE;
+        Color text = Color.BLACK;
         
+        char c=1; 
+        int i=1;
         int x = 0;
         int y = BRICK_SIZE+20;
         
         for (String wall : this.bricks){  
             x = BRICK_SIZE+10;
             StringTokenizer st = new StringTokenizer(wall, ",");
+            
             while (st.hasMoreTokens()){
                 String nombre = st.nextToken();
                 if (nombre.equals("#")){
@@ -59,13 +63,30 @@ public class Form extends JFrame{
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+
                 }else if(nombre.equals(".")){
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
-                }else{
-                    
+               
+                } else if (nombre.equals("A")) {
+                       
+                    painter.setColor(text);
+                    String stringValueOf = String.valueOf((char) (c + 'A' - 1));
+                    System.out.println(stringValueOf);
+                    painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    painter.drawString(stringValueOf, x + 7, y + 14);
+                    c+=1;
+
+                } else if (nombre.equals("B")) {
+
+                    System.out.println(i);
+                    painter.setColor(text);
+                    painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    painter.drawString(Integer.toString(i), x + 7, y + 14);
+                    i += 1;
                 }
                 x += BRICK_SIZE;
+                
             }
             y += BRICK_SIZE;
         }

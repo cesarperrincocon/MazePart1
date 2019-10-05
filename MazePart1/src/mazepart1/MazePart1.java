@@ -43,7 +43,7 @@ public class MazePart1 {
             String line;
             
             while ((line = br.readLine()) != null) {
-                if (line.length()==19){
+                if (line.length()==21){
                     lines.add(line);
                 }else{
                     System.err.println("Incorect lenght in the .txt file");
@@ -58,7 +58,7 @@ public class MazePart1 {
             System.err.println("Error :" + e.getMessage());
         }
         
-        if (lines.size()!=10){
+        if (lines.size()!=11){
             System.err.println("Incorrect number of lines in the .txt file");
             System.exit(0);
         }
