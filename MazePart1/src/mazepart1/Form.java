@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 import javax.swing.JFrame;
@@ -21,6 +22,8 @@ public class Form extends JFrame{
     private static final long seialVersionUID = 1L;
     private static final int BRICK_SIZE=20;
     ArrayList<String> bricks;
+    public int posXPerso = 53;
+    public int posYPerso = 63;
     
     
     public Form(ArrayList<String> bricks){
@@ -46,6 +49,7 @@ public class Form extends JFrame{
         Color line = Color.GRAY.brighter();
         Color fill = Color.BLUE;
         Color text = Color.BLACK;
+        Color perso = Color.RED;
         
         char c=1; 
         int i=1;
@@ -55,6 +59,10 @@ public class Form extends JFrame{
         for (String wall : this.bricks){  
             x = BRICK_SIZE+10;
             StringTokenizer st = new StringTokenizer(wall, ",");
+            painter.setColor(text);
+            painter.drawOval(posXPerso, posYPerso, 14, 14);
+            painter.setColor(perso);
+            painter.fillOval(posXPerso, posYPerso, 14, 14);
             
             while (st.hasMoreTokens()){
                 String nombre = st.nextToken();
@@ -90,5 +98,33 @@ public class Form extends JFrame{
             }
             y += BRICK_SIZE;
         }
+        System.out.println(getWidth());
+        System.out.println(getHeight());
+    }
+    
+    @Override
+    protected void processKeyEvent(KeyEvent ke) {
+
+        if (ke.getID() != KeyEvent.KEY_PRESSED) {
+            return;
+        }
+        if (ke.getKeyCode() == KeyEvent.VK_RIGHT) {
+            if (posXPerso + 20 < 12*BRICK_SIZE) {
+                posXPerso  += 20;
+            }
+        } else if (ke.getKeyCode() == KeyEvent.VK_LEFT) {
+            if (posXPerso  - 40 > BRICK_SIZE) {
+                posXPerso  -= 20;
+            }
+        } else if (ke.getKeyCode() == KeyEvent.VK_UP) {
+            if (posYPerso  - 40 > 2*BRICK_SIZE) {
+                posYPerso -= 20;
+            }
+        } else if (ke.getKeyCode() == KeyEvent.VK_DOWN) {
+            if (posYPerso + 20 != 13*BRICK_SIZE) {
+                posYPerso += 10;
+            }
+        }
+        repaint();
     }
 }
