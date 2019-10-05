@@ -21,9 +21,10 @@ import javax.swing.JFrame;
 public class Form extends JFrame{
     private static final long seialVersionUID = 1L;
     private static final int BRICK_SIZE=20;
+    public int posXPerso = 73;
+    public int posYPerso = 83;
     ArrayList<String> bricks;
-    public int posXPerso = 53;
-    public int posYPerso = 63;
+    
     
     
     public Form(ArrayList<String> bricks){
@@ -46,7 +47,8 @@ public class Form extends JFrame{
         painter.setColor(Color.WHITE);
         painter.fillRect(0, 0, getWidth(), getHeight());
         
-        Color line = Color.GRAY.brighter();
+        Color line = Color.GRAY;
+        Color muros = Color.LIGHT_GRAY;
         Color fill = Color.BLUE;
         Color text = Color.BLACK;
         Color perso = Color.RED;
@@ -57,12 +59,11 @@ public class Form extends JFrame{
         int y = BRICK_SIZE+20;
         
         for (String wall : this.bricks){  
-            x = BRICK_SIZE+10;
+            
             StringTokenizer st = new StringTokenizer(wall, ",");
-            painter.setColor(text);
-            painter.drawOval(posXPerso, posYPerso, 14, 14);
             painter.setColor(perso);
             painter.fillOval(posXPerso, posYPerso, 14, 14);
+            x = BRICK_SIZE+10;
             
             while (st.hasMoreTokens()){
                 String nombre = st.nextToken();
@@ -76,8 +77,7 @@ public class Form extends JFrame{
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
                
-                } else if (nombre.equals("A")) {
-                       
+                } else if (nombre.equals("A")) {                       
                     painter.setColor(text);
                     String stringValueOf = String.valueOf((char) (c + 'A' - 1));
                     System.out.println(stringValueOf);
@@ -86,20 +86,28 @@ public class Form extends JFrame{
                     c+=1;
 
                 } else if (nombre.equals("B")) {
-
                     System.out.println(i);
                     painter.setColor(text);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.drawString(Integer.toString(i), x + 7, y + 14);
                     i += 1;
+                    
+                } else if (nombre.equals("0")) {  
+                    painter.setColor(muros);
+                    painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    painter.setColor(line);
+                    painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+
+                } else if (nombre.equals("Z")) {                       
+                    painter.setColor(text);
+                    painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+
                 }
                 x += BRICK_SIZE;
                 
             }
             y += BRICK_SIZE;
         }
-        System.out.println(getWidth());
-        System.out.println(getHeight());
     }
     
     @Override
@@ -109,20 +117,20 @@ public class Form extends JFrame{
             return;
         }
         if (ke.getKeyCode() == KeyEvent.VK_RIGHT) {
-            if (posXPerso + 20 < 12*BRICK_SIZE) {
+            if (posXPerso + 20 < 13*BRICK_SIZE) {
                 posXPerso  += 20;
             }
         } else if (ke.getKeyCode() == KeyEvent.VK_LEFT) {
-            if (posXPerso  - 40 > BRICK_SIZE) {
+            if (posXPerso  - 40 > 2*BRICK_SIZE) {
                 posXPerso  -= 20;
             }
         } else if (ke.getKeyCode() == KeyEvent.VK_UP) {
-            if (posYPerso  - 40 > 2*BRICK_SIZE) {
+            if (posYPerso  - 40 > 3*BRICK_SIZE) {
                 posYPerso -= 20;
             }
         } else if (ke.getKeyCode() == KeyEvent.VK_DOWN) {
-            if (posYPerso + 20 != 13*BRICK_SIZE) {
-                posYPerso += 10;
+            if (posYPerso + 20 < 14*BRICK_SIZE) {
+                posYPerso += 20;
             }
         }
         repaint();
