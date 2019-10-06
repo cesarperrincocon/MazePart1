@@ -67,8 +67,9 @@ public class Form extends JFrame {
         Color text = Color.BLACK;
         Color perso = Color.RED;
 
-        int countColums = 0;
+        int countColumns = 0;
         int countLines = 0;
+        ArrayList<String> countLands = new ArrayList<String>();
         char c = 1;
         int i = 1;
         int x = 0;
@@ -85,6 +86,11 @@ public class Form extends JFrame {
 
             while (st.hasMoreTokens()) {
                 String nombre = st.nextToken();
+                
+                if (!countLands.contains(nombre) && nombre.matches("-?\\d+(\\.\\d+)?")){
+                    countLands.add(nombre);
+                }
+                
                 if (nombre.equals("25")) {
                     painter.setColor(water);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
@@ -141,7 +147,7 @@ public class Form extends JFrame {
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.drawString(stringValueOf, x + 7, y + 14);
                     c += 1;
-                    countColums += 1;
+                    countColumns += 1;
 
                 } else if (nombre.equals("B")) {
                     painter.setColor(text);
@@ -150,7 +156,7 @@ public class Form extends JFrame {
                     i += 1;
                     countLines += 1;
 
-                } else if (nombre.equals("0")) {
+                } else if (nombre.equals("C")) {
                     painter.setColor(muros);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
@@ -242,9 +248,10 @@ public class Form extends JFrame {
         }
         painter.setColor(text);
         painter.drawString("Number of lines : " + countLines, 350, 50);
-        painter.drawString("Number of columns : " + countLines, 350, 70);
-        painter.drawString("Hero position : [ " + posXactuelle + " ," + posYactuelle + " ]", 350, 90);
-        painter.drawString("Votre perso est sur du " + nomcase, 350, 110);
+        painter.drawString("Number of columns : " + countColumns, 350, 70);
+        painter.drawString("Number of different lands : " + countLands.size(), 350, 90);
+        painter.drawString("Hero position : [ " + posXactuelle + " ," + posYactuelle + " ]", 350, 110);
+        painter.drawString("Votre perso est sur du " + nomcase, 350, 130);
 
         if (posXPerso == posXFinal - 3 && posYPerso == posYFinal - 12) {
             JFrame frame = new JFrame("showMessageDialog");
