@@ -27,6 +27,8 @@ public class Form extends JFrame {
     public int posYPerso;
     public int posXFinal;
     public int posYFinal;
+    public int typecase;
+    public String nomcase;
 
     ArrayList<String> bricks;
 
@@ -64,7 +66,7 @@ public class Form extends JFrame {
         Color water = Color.BLUE;
         Color text = Color.BLACK;
         Color perso = Color.RED;
-        
+
         int countColums = 0;
         int countLines = 0;
         char c = 1;
@@ -88,30 +90,50 @@ public class Form extends JFrame {
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    if (x == posXPerso - 3 && y == posYPerso - 3) {
+                        typecase = 1;
+                        nomcase = "Water";
+                    }
 
                 } else if (nombre.equals("23")) {
                     painter.setColor(sand);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
-                    
+                    if (x == posXPerso - 3 && y == posYPerso - 3) {
+                        typecase = 2;
+                        nomcase = "Sand";
+                    }
+
                 } else if (nombre.equals("37")) {
                     painter.setColor(montain);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
-                    
+                    if (x == posXPerso - 3 && y == posYPerso - 3) {
+                        typecase = 3;
+                        nomcase = "Mountain";
+                    }
+
                 } else if (nombre.equals("46")) {
                     painter.setColor(forest);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
-                    
+                    if (x == posXPerso - 3 && y == posYPerso - 3) {
+                        typecase = 4;
+                        nomcase = "Forest";
+                    }
+
                 } else if (nombre.equals("13")) {
                     painter.setColor(road);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    if (x == posXPerso - 3 && y == posYPerso - 3) {
+                        typecase = 5;
+                        nomcase = "Road";
+                    }
 
                 } else if (nombre.equals("A")) {
                     painter.setColor(text);
@@ -143,7 +165,7 @@ public class Form extends JFrame {
 
             }
             y += BRICK_SIZE;
-        } 
+        }
 
         String posXactuelle = null;
         switch (posXPerso) {
@@ -222,13 +244,13 @@ public class Form extends JFrame {
         painter.drawString("Number of lines : " + countLines, 350, 50);
         painter.drawString("Number of columns : " + countLines, 350, 70);
         painter.drawString("Hero position : [ " + posXactuelle + " ," + posYactuelle + " ]", 350, 90);
-        
-        if (posXPerso == posXFinal-3 && posYPerso == posYFinal-12) {
+        painter.drawString("Votre perso est sur du " + nomcase, 350, 110);
+
+        if (posXPerso == posXFinal - 3 && posYPerso == posYFinal - 12) {
             JFrame frame = new JFrame("showMessageDialog");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             JOptionPane.showMessageDialog(frame, "Well played !!", "Victoiry Royal", JOptionPane.INFORMATION_MESSAGE);
         }
-   
 
     }
 
