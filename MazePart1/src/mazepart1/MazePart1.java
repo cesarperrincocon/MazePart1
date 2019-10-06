@@ -188,7 +188,7 @@ public class MazePart1 {
 
     }
 
-    private static ArrayList<String> read(String filename) {
+    static ArrayList<String> read(String filename) {
         ArrayList<String> lines = new ArrayList<>();
         try {
             FileInputStream fstream = new FileInputStream(filename);
