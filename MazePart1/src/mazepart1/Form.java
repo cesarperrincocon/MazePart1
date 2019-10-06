@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -117,7 +118,7 @@ public class Form extends JFrame {
             }
             y += BRICK_SIZE;
         }
-        
+
         String posXactuelle = null;
         switch (posXPerso) {
             case 73:
@@ -153,9 +154,8 @@ public class Form extends JFrame {
 
             default:
             // code block
-        } 
-        
-        
+        }
+
         String posYactuelle = null;
         switch (posYPerso) {
             case 83:
@@ -191,8 +191,16 @@ public class Form extends JFrame {
 
             default:
             // code block
-        }    
-        painter.drawString("Position du perso : [ "+posXactuelle+" ,"+posYactuelle+" ]", 350, 60);
+        }
+        painter.drawString("Position du perso : [ " + posXactuelle + " ," + posYactuelle + " ]", 350, 60);
+        
+        if (posXPerso == posXFinal-3 && posYPerso == posYFinal-12) {
+            JFrame frame = new JFrame("showMessageDialog");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JOptionPane.showMessageDialog(frame, "Bien joué !!", "Victoire", JOptionPane.INFORMATION_MESSAGE);
+        }
+   
+
     }
 
     @Override
