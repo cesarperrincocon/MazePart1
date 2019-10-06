@@ -176,8 +176,10 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(snakebutton)
                         .addGap(131, 131, 131)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(hippobutton)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(hippobutton)
+                        .addGap(9, 9, 9)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -210,25 +212,25 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jLabel7))))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tigerbutton)
-                    .addComponent(snakebutton)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(knightbutton)
-                        .addComponent(hippobutton)))
+                        .addComponent(tigerbutton)
+                        .addComponent(hippobutton))
+                    .addComponent(snakebutton)
+                    .addComponent(knightbutton))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Choose the start coordonates");
 
-        jLabel4.setText("X Start");
+        jLabel4.setText("X Start (A-J)");
 
-        jLabel5.setText("Y Start");
+        jLabel5.setText("Y Start (1-10)");
 
         jLabel10.setText("Choose the end coordonates");
 
-        jLabel11.setText("X End");
+        jLabel11.setText("X End (A-J)");
 
-        jLabel12.setText("Y End");
+        jLabel12.setText("Y End (1-10)");
 
         XEnd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,9 +336,33 @@ public class Menu extends javax.swing.JFrame {
         System.out.println("you selected knight");
     }//GEN-LAST:event_knightbuttonActionPerformed
 
+    public static boolean isStringOnlyAlphabet(String str) 
+    { 
+        return ((str != null) 
+                && (!str.equals("")) 
+                && (str.matches("^[A-J]*$"))); 
+    }
+    
+    public static boolean isNumberOfInterval (String str) 
+    { 
+        return ((str != null) 
+                && (!str.equals("")) 
+                && (str.matches("^(1[0-1]|[1-9])$"))); 
+    } 
+    
+    public class IncorrectCoordonateException extends RuntimeException { 
+        public IncorrectCoordonateException(String errorMessage) {
+            super(errorMessage);
+        }
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String xCoordStart = XStart.getText();
+        
+        if(isStringOnlyAlphabet(xCoordStart) == false){
+            throw new IncorrectCoordonateException(xCoordStart + " is not between A and J");
+        }
         int num1 = 0;
         switch (xCoordStart) {
             case "A":
@@ -375,6 +401,9 @@ public class Menu extends javax.swing.JFrame {
         }
         String yCoordStart = YStart.getText();
         int num2 = Integer.parseInt(yCoordStart);
+        if(isNumberOfInterval(yCoordStart) == false){
+            throw new IncorrectCoordonateException(xCoordStart + " is not between 1 and 10");
+        }
         switch (num2) {
             case 1:
                 num2 = 83;
@@ -412,6 +441,10 @@ public class Menu extends javax.swing.JFrame {
         }
         String sum = xCoordStart + yCoordStart;
         String xCoordEnd = XEnd.getText();
+        
+        if(isStringOnlyAlphabet(xCoordEnd) == false){
+            throw new IncorrectCoordonateException(xCoordStart + " is not between A and J");
+        }
         int num3 = 0;
         switch (xCoordEnd) {
             case "A":
@@ -450,6 +483,9 @@ public class Menu extends javax.swing.JFrame {
         }
         String yCoordEnd = YEnd.getText();
         int num4 = Integer.parseInt(yCoordEnd);
+        if(isNumberOfInterval(yCoordEnd) == false){
+            throw new IncorrectCoordonateException(xCoordStart + " is not between 1 and 10");
+        }
         switch (num4) {
             case 1:
                 num4 = 83;

@@ -177,8 +177,11 @@
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="hippobutton" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="hippobutton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace pref="71" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -223,12 +226,12 @@
                   </Group>
                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="tigerbutton" min="-2" max="-2" attributes="0"/>
-                      <Component id="snakebutton" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="knightbutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tigerbutton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="hippobutton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="snakebutton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="knightbutton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="55" max="32767" attributes="0"/>
               </Group>
@@ -357,12 +360,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="X Start"/>
+        <Property name="text" type="java.lang.String" value="X Start (A-J)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Y Start"/>
+        <Property name="text" type="java.lang.String" value="Y Start (1-10)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
@@ -372,12 +375,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="X End"/>
+        <Property name="text" type="java.lang.String" value="X End (A-J)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Y End"/>
+        <Property name="text" type="java.lang.String" value="Y End (1-10)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="XEnd">

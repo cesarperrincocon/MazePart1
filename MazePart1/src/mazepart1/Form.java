@@ -56,11 +56,17 @@ public class Form extends JFrame {
         painter.fillRect(0, 0, getWidth(), getHeight());
 
         Color line = Color.GRAY;
+        Color sand = Color.ORANGE;
+        Color forest = Color.GREEN;
+        Color road = Color.DARK_GRAY;
+        Color montain = Color.PINK;
         Color muros = Color.LIGHT_GRAY;
-        Color fill = Color.BLUE;
+        Color water = Color.BLUE;
         Color text = Color.BLACK;
         Color perso = Color.RED;
-
+        
+        int countColums = 0;
+        int countLines = 0;
         char c = 1;
         int i = 1;
         int x = 0;
@@ -77,30 +83,50 @@ public class Form extends JFrame {
 
             while (st.hasMoreTokens()) {
                 String nombre = st.nextToken();
-                if (nombre.equals("#")) {
-                    painter.setColor(fill);
+                if (nombre.equals("25")) {
+                    painter.setColor(water);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
 
-                } else if (nombre.equals(".")) {
+                } else if (nombre.equals("23")) {
+                    painter.setColor(sand);
+                    painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    painter.setColor(line);
+                    painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    
+                } else if (nombre.equals("37")) {
+                    painter.setColor(montain);
+                    painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    painter.setColor(line);
+                    painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    
+                } else if (nombre.equals("46")) {
+                    painter.setColor(forest);
+                    painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    painter.setColor(line);
+                    painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
+                    
+                } else if (nombre.equals("13")) {
+                    painter.setColor(road);
+                    painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.setColor(line);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
 
                 } else if (nombre.equals("A")) {
                     painter.setColor(text);
                     String stringValueOf = String.valueOf((char) (c + 'A' - 1));
-                    System.out.println(stringValueOf);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.drawString(stringValueOf, x + 7, y + 14);
                     c += 1;
+                    countColums += 1;
 
                 } else if (nombre.equals("B")) {
-                    System.out.println(i);
                     painter.setColor(text);
                     painter.drawRect(x, y, BRICK_SIZE, BRICK_SIZE);
                     painter.drawString(Integer.toString(i), x + 7, y + 14);
                     i += 1;
+                    countLines += 1;
 
                 } else if (nombre.equals("0")) {
                     painter.setColor(muros);
@@ -117,7 +143,7 @@ public class Form extends JFrame {
 
             }
             y += BRICK_SIZE;
-        }
+        } 
 
         String posXactuelle = null;
         switch (posXPerso) {
@@ -192,12 +218,15 @@ public class Form extends JFrame {
             default:
             // code block
         }
-        painter.drawString("Position du perso : [ " + posXactuelle + " ," + posYactuelle + " ]", 350, 60);
+        painter.setColor(text);
+        painter.drawString("Number of lines : " + countLines, 350, 50);
+        painter.drawString("Number of columns : " + countLines, 350, 70);
+        painter.drawString("Hero position : [ " + posXactuelle + " ," + posYactuelle + " ]", 350, 90);
         
         if (posXPerso == posXFinal-3 && posYPerso == posYFinal-12) {
             JFrame frame = new JFrame("showMessageDialog");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            JOptionPane.showMessageDialog(frame, "Bien joué !!", "Victoire", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Well played !!", "Victoiry Royal", JOptionPane.INFORMATION_MESSAGE);
         }
    
 
