@@ -52,6 +52,31 @@ public class Menu extends javax.swing.JFrame {
         hippobutton = new javax.swing.JRadioButton();
         tigerbutton = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -63,6 +88,7 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        XStart.setText("A");
         XStart.setToolTipText("");
         XStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +96,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        YStart.setText("1");
         YStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 YStartActionPerformed(evt);
@@ -107,7 +134,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/crusader.png"))); // NOI18N
 
         buttonGroup.add(knightbutton);
-        knightbutton.setFont(new java.awt.Font("Dialog", 0, 11)); // NOI18N
+        knightbutton.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        knightbutton.setSelected(true);
         knightbutton.setText("KNIGHT");
         knightbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +144,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         buttonGroup.add(snakebutton);
-        snakebutton.setFont(new java.awt.Font("Dialog", 0, 11)); // NOI18N
+        snakebutton.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         snakebutton.setText("SNAKE");
         snakebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +153,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         buttonGroup.add(hippobutton);
-        hippobutton.setFont(new java.awt.Font("Dialog", 0, 11)); // NOI18N
+        hippobutton.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         hippobutton.setText("HIPPOPOTAMUS");
         hippobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,7 +161,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        tigerbutton.setFont(new java.awt.Font("Dialog", 0, 11)); // NOI18N
+        tigerbutton.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tigerbutton.setText("TIGER");
         tigerbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +171,91 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setText("Welcome to the maze !");
+
+        jLabel13.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel13.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel13.setText("Water");
+        jLabel13.setOpaque(true);
+
+        jLabel14.setBackground(new java.awt.Color(255, 153, 51));
+        jLabel14.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel14.setText("Sand");
+        jLabel14.setOpaque(true);
+
+        jLabel15.setBackground(new java.awt.Color(255, 153, 153));
+        jLabel15.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel15.setText("Montains");
+        jLabel15.setOpaque(true);
+
+        jLabel16.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel16.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel16.setText("Forest");
+        jLabel16.setOpaque(true);
+
+        jLabel17.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel17.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel17.setText("Road");
+        jLabel17.setOpaque(true);
+
+        jLabel18.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel18.setText("5");
+
+        jLabel19.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel19.setText("4");
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel20.setText("6");
+
+        jLabel21.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel21.setText("4");
+
+        jLabel22.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel22.setText("1");
+
+        jLabel23.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel23.setText("2");
+
+        jLabel24.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel24.setText("1");
+
+        jLabel25.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel25.setText("N/A");
+
+        jLabel26.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel26.setText("3");
+
+        jLabel27.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel27.setText("3");
+
+        jLabel28.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel28.setText("1");
+
+        jLabel29.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel29.setText("4");
+
+        jLabel30.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel30.setText("N/A");
+
+        jLabel31.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel31.setText("5");
+
+        jLabel32.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel32.setText("2");
+
+        jLabel33.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel33.setText("N/A");
+
+        jLabel34.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel34.setText("4");
+
+        jLabel35.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel35.setText("2");
+
+        jLabel36.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel36.setText("1");
+
+        jLabel37.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel37.setText("3");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -160,34 +273,66 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jLabel9)
+                .addGap(94, 94, 94)
+                .addComponent(jLabel6)
+                .addGap(128, 128, 128)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(knightbutton)))
-                .addGap(96, 96, 96)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(89, 89, 89))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(snakebutton)
-                        .addGap(131, 131, 131)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(hippobutton)
-                        .addGap(9, 9, 9)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel37)
+                                .addComponent(jLabel36)
+                                .addComponent(jLabel35)
+                                .addComponent(jLabel34)
+                                .addComponent(jLabel33))
+                            .addComponent(tigerbutton))
+                        .addGap(113, 113, 113))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel8)
-                        .addGap(82, 82, 82))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(tigerbutton)
-                        .addGap(113, 113, 113))))
+                        .addGap(74, 74, 74))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel18))
+                        .addGap(194, 194, 194)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel23)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(knightbutton)
+                        .addGap(137, 137, 137)
+                        .addComponent(snakebutton)))
+                .addGap(205, 205, 205)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel28))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,25 +344,87 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel9))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel8)
+                                        .addGap(25, 25, 25)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tigerbutton)
+                                        .addComponent(hippobutton))
+                                    .addComponent(snakebutton)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel7)))
+                        .addGap(10, 10, 10))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(knightbutton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel13)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel14)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel15)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel16)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel17))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel19)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel20)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel21)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel22)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7))))
-                .addGap(7, 7, 7)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tigerbutton)
-                        .addComponent(hippobutton))
-                    .addComponent(snakebutton)
-                    .addComponent(knightbutton))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel27))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel32))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel37)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Choose the start coordonates");
@@ -232,11 +439,14 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel12.setText("Y End (1-10)");
 
+        XEnd.setText("J");
         XEnd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XEndActionPerformed(evt);
             }
         });
+
+        YEnd.setText("10");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -276,7 +486,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
+                        .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -297,7 +507,7 @@ public class Menu extends javax.swing.JFrame {
                                     .addComponent(YEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel12)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(15, 15, 15)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -345,7 +555,7 @@ public class Menu extends javax.swing.JFrame {
     { 
         return ((str != null) 
                 && (!str.equals("")) 
-                && (str.matches("^(1[0-1]|[1-9])$"))); 
+                && (str.matches("^(1[0]|[1-9])$"))); 
     } 
     
     public class IncorrectCoordonateException extends RuntimeException { 
@@ -359,6 +569,9 @@ public class Menu extends javax.swing.JFrame {
         String xCoordStart = XStart.getText();
         
         if(isStringOnlyAlphabet(xCoordStart) == false){
+            JFrame errorFrame = new JFrame("showMessageDialog");
+            errorFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JOptionPane.showMessageDialog(errorFrame, xCoordStart + " is not between A and J", "Error window", JOptionPane.INFORMATION_MESSAGE);
             throw new IncorrectCoordonateException(xCoordStart + " is not between A and J");
         }
         int num1 = 0;
@@ -400,7 +613,10 @@ public class Menu extends javax.swing.JFrame {
         String yCoordStart = YStart.getText();
         int num2 = Integer.parseInt(yCoordStart);
         if(isNumberOfInterval(yCoordStart) == false){
-            throw new IncorrectCoordonateException(xCoordStart + " is not between 1 and 10");
+            JFrame errorFrame = new JFrame("showMessageDialog");
+            errorFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JOptionPane.showMessageDialog(errorFrame, yCoordStart + " is not between 1 and 10", "Error window", JOptionPane.INFORMATION_MESSAGE);
+            throw new IncorrectCoordonateException(yCoordStart + " is not between 1 and 10");
         }
         switch (num2) {
             case 1:
@@ -441,7 +657,10 @@ public class Menu extends javax.swing.JFrame {
         String xCoordEnd = XEnd.getText();
         
         if(isStringOnlyAlphabet(xCoordEnd) == false){
-            throw new IncorrectCoordonateException(xCoordStart + " is not between A and J");
+            JFrame errorFrame = new JFrame("showMessageDialog");
+            errorFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JOptionPane.showMessageDialog(errorFrame, xCoordEnd + " is not between A and J", "Error window", JOptionPane.INFORMATION_MESSAGE);
+            throw new IncorrectCoordonateException(xCoordEnd + " is not between A and J");
         }
         int num3 = 0;
         switch (xCoordEnd) {
@@ -482,7 +701,10 @@ public class Menu extends javax.swing.JFrame {
         String yCoordEnd = YEnd.getText();
         int num4 = Integer.parseInt(yCoordEnd);
         if(isNumberOfInterval(yCoordEnd) == false){
-            throw new IncorrectCoordonateException(xCoordStart + " is not between 1 and 10");
+            JFrame errorFrame = new JFrame("showMessageDialog");
+            errorFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JOptionPane.showMessageDialog(errorFrame, yCoordEnd + " is not between 1 and 10", "Error window", JOptionPane.INFORMATION_MESSAGE);
+            throw new IncorrectCoordonateException(yCoordEnd + " is not between 1 and 10");
         }
         switch (num4) {
             case 1:
@@ -563,6 +785,7 @@ public class Menu extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Menu().setVisible(true);
             }
@@ -612,8 +835,33 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
