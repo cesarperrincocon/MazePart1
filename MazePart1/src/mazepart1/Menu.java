@@ -595,7 +595,7 @@ public class Menu extends javax.swing.JFrame {
         window.setLocationRelativeTo(null);
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void YStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YStartActionPerformed

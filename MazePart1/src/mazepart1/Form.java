@@ -33,6 +33,7 @@ public class Form extends JFrame {
     public float score = 0;
     public int compt = 0;
     public String recap = "";
+    public String derniermouv;
 
     ArrayList<String> bricks;
 
@@ -50,6 +51,12 @@ public class Form extends JFrame {
         this.posYFinal = posYFinal;
         this.nameCharacter = nameCharacter;
 
+    }
+    
+    public void imposs(int x, int y, String nom){
+        if(nom=="Snake"){
+            
+        }
     }
 
     @Override
@@ -117,7 +124,7 @@ public class Form extends JFrame {
                                 score = score + 1;
                                 break;
                             case "Tiger":
-                                //!!!!!!!effet ne pas bouger !!!!!!!!
+                                retour(derniermouv);
                                 break;
                             default:
                             // code block
@@ -163,10 +170,10 @@ public class Form extends JFrame {
                                 score = score + 6;
                                 break;
                             case "Snake":
-                                //Ne pas bouger !!!
+                                retour(derniermouv);
                                 break;
                             case "Hippopotamus":
-                                //Ne pas bouger !!!
+                                retour(derniermouv);
                                 break;
                             case "Tiger":
                                 score = score + 2;
@@ -365,23 +372,47 @@ public class Form extends JFrame {
             if (posXPerso + 20 < 13 * BRICK_SIZE) {
                 posXPerso += 20;
                 compt += 1;
+                derniermouv="droite";
             }
         } else if (ke.getKeyCode() == KeyEvent.VK_LEFT) {
             if (posXPerso - 40 > 2 * BRICK_SIZE) {
                 posXPerso -= 20;
                 compt += 1;
+                derniermouv="gauche";
             }
         } else if (ke.getKeyCode() == KeyEvent.VK_UP) {
             if (posYPerso - 40 > 3 * BRICK_SIZE) {
                 posYPerso -= 20;
                 compt += 1;
+                derniermouv="haut";
             }
         } else if (ke.getKeyCode() == KeyEvent.VK_DOWN) {
             if (posYPerso + 20 < 14 * BRICK_SIZE) {
-                posYPerso += 20;
+                posYPerso += 20;  
                 compt += 1;
+                derniermouv="bas";
             }
         }
         repaint();
+    }
+    public void retour(String b){
+        switch (b) {
+            case "droite":
+                 posXPerso -= 20;
+                break;
+            case "gauche":
+                posXPerso += 20;
+                break;
+            case "haut":
+                posYPerso += 20;
+                break;
+            case "bas":
+                posYPerso -= 20;
+                break;
+            
+
+            default:
+            // code block
+        }
     }
 }
