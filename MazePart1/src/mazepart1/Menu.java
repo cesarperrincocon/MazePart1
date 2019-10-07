@@ -109,7 +109,7 @@ public class Menu extends javax.swing.JFrame {
                 YStartActionPerformed(evt);
             }
         });
-        getContentPane().add(YStart, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 552, 37, -1));
+        getContentPane().add(YStart, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 37, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -328,7 +328,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 529, -1, -1));
 
         jLabel5.setText("Y Start (1-10)");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 555, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, -1, -1));
 
         jLabel10.setText("Choose the end coordonates");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 529, -1, -1));
