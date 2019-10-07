@@ -744,7 +744,7 @@ public class Menu extends javax.swing.JFrame {
         String sum2 = xCoordEnd + yCoordEnd;
         ArrayList<String> bricks = MazePart1.read("data/MazeMap.txt");
 
-        Form window = new Form(bricks, num1, num2, num3 + 3, num4 + 12);
+        Form window = new Form(bricks, num1, num2, num3 + 3, num4 + 12,"Snake");
         window.setTitle("Maze");
         window.setLocationRelativeTo(null);
         window.setVisible(true);

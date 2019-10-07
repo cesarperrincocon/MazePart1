@@ -29,10 +29,14 @@ public class Form extends JFrame {
     public int posYFinal;
     public int typecase;
     public String nomcase;
+    public String nameCharacter;
+    public float score = 0;
+    public int compt = 0;
+    public String recap = "";
 
     ArrayList<String> bricks;
 
-    public Form(ArrayList<String> bricks, int posXPerso, int posYPerso, int posXFinal, int posYFinal) {
+    public Form(ArrayList<String> bricks, int posXPerso, int posYPerso, int posXFinal, int posYFinal, String nameCharacter) {
         if (!bricks.isEmpty()) {
             int width = bricks.get(0).toCharArray().length * BRICK_SIZE;
             int height = bricks.size() * BRICK_SIZE;
@@ -44,6 +48,7 @@ public class Form extends JFrame {
         this.posYPerso = posYPerso;
         this.posXFinal = posXFinal;
         this.posYFinal = posYFinal;
+        this.nameCharacter = nameCharacter;
 
     }
 
@@ -74,6 +79,7 @@ public class Form extends JFrame {
         int i = 1;
         int x = 0;
         int y = BRICK_SIZE + 20;
+        
 
         for (String wall : this.bricks) {
 
@@ -82,15 +88,16 @@ public class Form extends JFrame {
             painter.fillOval(posXPerso, posYPerso, 14, 14);
             char[] carray = {'F'};
             painter.drawChars(carray, 0, 1, posXFinal, posYFinal);
+
             x = BRICK_SIZE + 10;
 
             while (st.hasMoreTokens()) {
                 String nombre = st.nextToken();
-                
-                if (!countLands.contains(nombre) && nombre.matches("-?\\d+(\\.\\d+)?")){
+
+                if (!countLands.contains(nombre) && nombre.matches("-?\\d+(\\.\\d+)?")) {
                     countLands.add(nombre);
                 }
-                
+
                 if (nombre.equals("25")) {
                     painter.setColor(water);
                     painter.fillRect(x, y, BRICK_SIZE, BRICK_SIZE);
@@ -99,6 +106,22 @@ public class Form extends JFrame {
                     if (x == posXPerso - 3 && y == posYPerso - 3) {
                         typecase = 1;
                         nomcase = "Water";
+                        switch (nameCharacter) {
+                            case "Knight":
+                                score = score + 5;
+                                break;
+                            case "Snake":
+                                score = score + 2;
+                                break;
+                            case "Hippopotamus":
+                                score = score + 1;
+                                break;
+                            case "Tiger":
+                                //!!!!!!!effet ne pas bouger !!!!!!!!
+                                break;
+                            default:
+                            // code block
+                        }
                     }
 
                 } else if (nombre.equals("23")) {
@@ -109,6 +132,22 @@ public class Form extends JFrame {
                     if (x == posXPerso - 3 && y == posYPerso - 3) {
                         typecase = 2;
                         nomcase = "Sand";
+                        switch (nameCharacter) {
+                            case "Knight":
+                                score = score + 4;
+                                break;
+                            case "Snake":
+                                score = score + 1;
+                                break;
+                            case "Hippopotamus":
+                                score = score + 4;
+                                break;
+                            case "Tiger":
+                                score = score + 4;
+                                break;
+                            default:
+                            // code block
+                        }
                     }
 
                 } else if (nombre.equals("37")) {
@@ -119,6 +158,22 @@ public class Form extends JFrame {
                     if (x == posXPerso - 3 && y == posYPerso - 3) {
                         typecase = 3;
                         nomcase = "Mountain";
+                        switch (nameCharacter) {
+                            case "Knight":
+                                score = score + 6;
+                                break;
+                            case "Snake":
+                                //Ne pas bouger !!!
+                                break;
+                            case "Hippopotamus":
+                                //Ne pas bouger !!!
+                                break;
+                            case "Tiger":
+                                score = score + 2;
+                                break;
+                            default:
+                            // code block
+                        }
                     }
 
                 } else if (nombre.equals("46")) {
@@ -129,6 +184,22 @@ public class Form extends JFrame {
                     if (x == posXPerso - 3 && y == posYPerso - 3) {
                         typecase = 4;
                         nomcase = "Forest";
+                        switch (nameCharacter) {
+                            case "Knight":
+                                score = score + 4;
+                                break;
+                            case "Snake":
+                                score = score + 3;
+                                break;
+                            case "Hippopotamus":
+                                score = score + 5;
+                                break;
+                            case "Tiger":
+                                score = score + 1;
+                                break;
+                            default:
+                            // code block
+                        }
                     }
 
                 } else if (nombre.equals("13")) {
@@ -139,6 +210,22 @@ public class Form extends JFrame {
                     if (x == posXPerso - 3 && y == posYPerso - 3) {
                         typecase = 5;
                         nomcase = "Road";
+                        switch (nameCharacter) {
+                            case "Knight":
+                                score = score + 1;
+                                break;
+                            case "Snake":
+                                score = score + 3;
+                                break;
+                            case "Hippopotamus":
+                                score = score + 2;
+                                break;
+                            case "Tiger":
+                                score = score + 3;
+                                break;
+                            default:
+                            // code block
+                        }
                     }
 
                 } else if (nombre.equals("A")) {
@@ -252,11 +339,18 @@ public class Form extends JFrame {
         painter.drawString("Number of different lands : " + countLands.size(), 350, 90);
         painter.drawString("Hero position : [ " + posXactuelle + " ," + posYactuelle + " ]", 350, 110);
         painter.drawString("Votre perso est sur du " + nomcase, 350, 130);
-
+        painter.drawString("Your Character : " + nameCharacter, 350, 150);
+        painter.drawString("Actual Score : " + score, 350, 170);
+        
+        String t = "" + compt;
+        recap = recap + posXactuelle+posYactuelle+" : "+t+" ";
+        painter.drawString(recap, 350, 190);
+        
+        
         if (posXPerso == posXFinal - 3 && posYPerso == posYFinal - 12) {
             JFrame frame = new JFrame("showMessageDialog");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            JOptionPane.showMessageDialog(frame, "Well played !!", "Victoiry Royal", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Well played !! Your Score : " + score, "Victory Royal", JOptionPane.INFORMATION_MESSAGE);
         }
 
     }
@@ -270,18 +364,22 @@ public class Form extends JFrame {
         if (ke.getKeyCode() == KeyEvent.VK_RIGHT) {
             if (posXPerso + 20 < 13 * BRICK_SIZE) {
                 posXPerso += 20;
+                compt += 1;
             }
         } else if (ke.getKeyCode() == KeyEvent.VK_LEFT) {
             if (posXPerso - 40 > 2 * BRICK_SIZE) {
                 posXPerso -= 20;
+                compt += 1;
             }
         } else if (ke.getKeyCode() == KeyEvent.VK_UP) {
             if (posYPerso - 40 > 3 * BRICK_SIZE) {
                 posYPerso -= 20;
+                compt += 1;
             }
         } else if (ke.getKeyCode() == KeyEvent.VK_DOWN) {
             if (posYPerso + 20 < 14 * BRICK_SIZE) {
                 posYPerso += 20;
+                compt += 1;
             }
         }
         repaint();
